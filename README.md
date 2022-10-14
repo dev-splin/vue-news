@@ -6,6 +6,14 @@
 
 
 
+## :hammer: 설치
+
+1. **[Node.js](https://nodejs.org/en/)** 설치
+2. **뷰 프로젝트 생성** : vue create vue-news
+3. **라우터 설치** : npm i vue-router@3.5.3 --save
+
+
+
 ## :postbox: API
 
 해커 뉴스라는 API를 사용해 뉴스에 관한 데이터를 가져와 프로젝트를 진행합니다.
