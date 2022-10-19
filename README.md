@@ -11,6 +11,7 @@
 1. **[Node.js](https://nodejs.org/en/)** 설치
 2. **뷰 프로젝트 생성** : vue create vue-news
 3. **라우터 설치** : npm i vue-router@3.5.3 --save
+3. **axios 설치** : npm i axios --save
 
 
 
