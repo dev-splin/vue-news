@@ -9,6 +9,7 @@ import JobsView from "@/views/JobsView";
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
+    mode: "history",
     routes: [
         {
             path: '/',
@@ -24,6 +25,14 @@ export const router = new VueRouter({
         },
         {
             path: '/jobs',
+            component: JobsView,
+        },
+        {
+            path: '/item',
+            component: JobsView,
+        },
+        {
+            path: '/user',
             component: JobsView,
         },
     ]
