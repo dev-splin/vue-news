@@ -12,6 +12,7 @@
 2. **뷰 프로젝트 생성** : vue create vue-news
 3. **라우터 설치** : npm i vue-router@3.5.3 --save
 3. **axios 설치** : npm i axios --save
+3. **Vuex 설치** : npm i vuex@3.6.2 –save
 
 
 
