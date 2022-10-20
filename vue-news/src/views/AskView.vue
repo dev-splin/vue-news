@@ -10,22 +10,22 @@
 
 <script>
 import {fetchAskList} from "@/api";
+import {mapActions, mapState} from "vuex";
 
 export default {
   name: "AskView",
 
-  data() {
-    return {
-      askItems: [],
-    }
+  created() {
+    this.FETCH_ASKS();
   },
 
-  created() {
-    const vm = this;
-    fetchAskList()
-        .then(response => this.askItems = response.data)
-        .catch(error => console.log(error));
+  computed: {
+    ...mapState(['askItems'])
   },
+
+  methods: {
+    ...mapActions(['FETCH_ASKS'])
+  }
 }
 </script>
 

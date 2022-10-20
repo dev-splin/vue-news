@@ -9,22 +9,21 @@
 </template>
 
 <script>
-import {fetchJobsList} from "@/api";
+import {mapActions, mapState} from "vuex";
 
 export default {
   name: "JobsView",
 
-  data() {
-    return {
-      jobItems: [],
-    }
+  created() {
+    this.FETCH_JOBS();
   },
 
-  created() {
-    const vm = this;
-    fetchJobsList()
-        .then(response => this.jobItems = response.data)
-        .catch(error => console.log(error));
+  computed: {
+    ...mapState(['jobItems'])
+  },
+
+  methods: {
+    ...mapActions(['FETCH_JOBS'])
   },
 }
 </script>

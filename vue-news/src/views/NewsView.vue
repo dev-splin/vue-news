@@ -9,21 +9,23 @@
 </template>
 
 <script>
-import {fetchNewsList} from "@/api";
+
+
+import {mapActions, mapState} from "vuex";
 
 export default {
   name: "NewsView",
 
-  data() {
-    return {
-      newsItems: [],
-    }
+  created() {
+    this.FETCH_NEWS();
   },
 
-  created() {
-    fetchNewsList()
-      .then(response => this.newsItems = response.data)
-      .catch(error => console.log(error));
+  computed: {
+    ...mapState(['newsItems'])
+  },
+
+  methods: {
+    ...mapActions(['FETCH_NEWS'])
   }
 }
 </script>
