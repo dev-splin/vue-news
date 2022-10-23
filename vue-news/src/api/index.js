@@ -32,8 +32,18 @@ function fetchAskList() {
     return axios.get(`${config.baseUrl}/ask/1.json`);
 }
 
+/**
+ * User 정보 가져오기
+ * @param userName
+ * @returns {Promise<AxiosResponse<any>>}
+ */
+function fetchUserInfo(userName) {
+    return axios.get(`${config.baseUrl}/user/${userName}.json`);
+}
+
 export {
     fetchNewsList,
     fetchJobsList,
-    fetchAskList
+    fetchAskList,
+    fetchUserInfo,
 }

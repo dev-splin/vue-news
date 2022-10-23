@@ -15,12 +15,12 @@ import {mapActions, mapState} from "vuex";
 export default {
   name: "AskView",
 
-  created() {
-    this.FETCH_ASKS();
-  },
-
   computed: {
     ...mapState(['askItems'])
+  },
+
+  created() {
+    this.FETCH_ASKS();
   },
 
   methods: {

@@ -14,12 +14,12 @@ import {mapActions, mapState} from "vuex";
 export default {
   name: "JobsView",
 
-  created() {
-    this.FETCH_JOBS();
-  },
-
   computed: {
     ...mapState(['jobItems'])
+  },
+
+  created() {
+    this.FETCH_JOBS();
   },
 
   methods: {

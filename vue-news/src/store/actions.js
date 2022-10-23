@@ -15,5 +15,10 @@ export default {
         api.fetchAskList()
             .then(response => commit('SET_ASKS', response.data))
             .catch(error => console.log(error));
+    },
+    FETCH_USER_INFO({ commit }, userName) {
+        api.fetchUserInfo(userName)
+            .then(response => commit('SET_USER_INFO', response.data))
+            .catch(error => console.log(error));
     }
 }

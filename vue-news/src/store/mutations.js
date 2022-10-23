@@ -7,5 +7,8 @@ export default {
     },
     SET_ASKS(state, askItems) {
         state.askItems = askItems;
+    },
+    SET_USER_INFO(state, userInfo) {
+        state.userInfo = userInfo;
     }
 }
