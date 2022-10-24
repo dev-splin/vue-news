@@ -34,11 +34,20 @@ function fetchAskList() {
 
 /**
  * User 정보 가져오기
- * @param userName
+ * @param userId
  * @returns {Promise<AxiosResponse<any>>}
  */
-function fetchUserInfo(userName) {
-    return axios.get(`${config.baseUrl}/user/${userName}.json`);
+function fetchUserInfo(userId) {
+    return axios.get(`${config.baseUrl}/user/${userId}.json`);
+}
+
+/**
+ * Item 정보 가져오기
+ * @param itemId
+ * @returns {Promise<AxiosResponse<any>>}
+ */
+function fetchItemInfo(itemId) {
+    return axios.get(`${config.baseUrl}/item/${itemId}.json`);
 }
 
 export {
@@ -46,4 +55,5 @@ export {
     fetchJobsList,
     fetchAskList,
     fetchUserInfo,
+    fetchItemInfo
 }

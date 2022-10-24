@@ -3,4 +3,5 @@ export default {
     jobItems: [],
     askItems: [],
     userInfo: [],
+    itemInfo: [],
 }

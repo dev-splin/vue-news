@@ -3,9 +3,9 @@
     <div
         v-for="item in newsItems"
     >
-      <a>
+      <router-link :to="`/item/${item.id}`">
         {{ item.title }}
-      </a>
+      </router-link>
       <small>
         {{ item.time_ago }} by
       </small>
@@ -19,13 +19,13 @@
 <script>
 
 
-import {mapActions, mapState} from "vuex";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
   name: "NewsView",
 
   computed: {
-    ...mapState(['newsItems'])
+    ...mapGetters({ newsItems: 'fetchedNewsItems' })
   },
 
   created() {

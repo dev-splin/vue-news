@@ -7,18 +7,18 @@
 </template>
 
 <script>
-import {mapActions, mapState} from "vuex";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
   name: "UserView",
 
   computed: {
-    ...mapState(['userInfo'])
+    ...mapGetters({ userInfo: 'fetchedUserInfo' })
   },
 
   created() {
-    const userName = this.$route.params.id;
-    this.FETCH_USER_INFO(userName);
+    const userId = this.$route.params.id;
+    this.FETCH_USER_INFO(userId);
   },
 
   methods: {
