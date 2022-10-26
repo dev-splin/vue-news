@@ -1,9 +1,24 @@
 <template>
   <div>
-    <p>title : {{ itemInfo.title }}</p>
-    <p>name : {{ itemInfo.user }}</p>
-    <p>points : {{ itemInfo.points }}</p>
-
+    <section>
+      <div class="user-container">
+        <div>
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="user-description">
+          <router-link :to="`/user/${itemInfo.id}`">
+            {{ itemInfo.user }}
+          </router-link>
+          <div class="time">
+            {{ itemInfo.time_ago }}
+          </div>
+        </div>
+      </div>
+      <h2> {{ itemInfo.title }}</h2>
+    </section>
+    <section>
+      <div v-html="itemInfo.content"></div>
+    </section>
   </div>
 </template>
 
@@ -30,5 +45,18 @@ export default {
 </script>
 
 <style scoped>
-
+.user-container {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+}
+.fa-user {
+  font-size: 2.5rem;
+}
+.user-description {
+  padding-left: 8px;
+}
+.time {
+  font-size: 0.7rem;
+}
 </style>
