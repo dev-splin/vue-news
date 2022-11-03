@@ -1,31 +1,14 @@
 <template>
-  <div>
-    <div
-        v-for="item in askItems"
-    >
-      {{ item.title }}
-    </div>
-  </div>
+  <ListItem></ListItem>
 </template>
 
 <script>
-import {fetchAskList} from "@/api";
-import {mapActions, mapState} from "vuex";
+import ListItem from "@/components/ListItem";
 
 export default {
   name: "AskView",
 
-  computed: {
-    ...mapState(['askItems'])
-  },
-
-  created() {
-    this.FETCH_ASKS();
-  },
-
-  methods: {
-    ...mapActions(['FETCH_ASKS'])
-  }
+  components: {ListItem},
 }
 </script>
 

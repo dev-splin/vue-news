@@ -3,7 +3,7 @@ export default {
         state.newsItems = newsItems;
     },
     SET_JOBS(state, jobItems) {
-        state.jobItems = jobItems;
+        state.jobsItems = jobItems;
     },
     SET_ASKS(state, askItems) {
         state.askItems = askItems;

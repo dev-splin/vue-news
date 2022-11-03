@@ -26,7 +26,7 @@ export default {
      * @param commit
      * @constructor
      */
-    FETCH_ASKS({commit}) {
+    FETCH_ASK({commit}) {
         api.fetchAskList()
             .then(response => commit('SET_ASKS', response.data))
             .catch(error => console.log(error));

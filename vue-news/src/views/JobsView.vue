@@ -1,30 +1,14 @@
 <template>
-  <div>
-    <div
-        v-for="item in jobItems"
-    >
-      {{ item.title }}
-    </div>
-  </div>
+  <ListItem></ListItem>
 </template>
 
 <script>
-import {mapActions, mapState} from "vuex";
+import ListItem from "@/components/ListItem";
 
 export default {
   name: "JobsView",
 
-  computed: {
-    ...mapState(['jobItems'])
-  },
-
-  created() {
-    this.FETCH_JOBS();
-  },
-
-  methods: {
-    ...mapActions(['FETCH_JOBS'])
-  },
+  components: {ListItem},
 }
 </script>
 
