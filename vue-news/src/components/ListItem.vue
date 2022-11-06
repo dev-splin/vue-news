@@ -21,7 +21,7 @@
             <template v-else>
               <router-link
                   :to="`/item/${item.id}`">
-                {{ item.user }}
+                {{ item.title }}
               </router-link>
             </template>
           </p>
