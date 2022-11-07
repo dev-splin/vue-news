@@ -1,19 +1,17 @@
 <template>
   <div>
     <section>
-      <div class="user-container">
-        <div>
-          <i class="fa-solid fa-user"></i>
-        </div>
-        <div class="user-description">
-          <router-link :to="`/user/${itemInfo.id}`">
-            {{ itemInfo.user }}
-          </router-link>
-          <div class="time">
-            {{ itemInfo.time_ago }}
-          </div>
-        </div>
-      </div>
+      <UserProfile>
+        <router-link
+            slot="username"
+            :to="`/user/${itemInfo.user}`"
+        >
+          {{ itemInfo.user }}
+        </router-link>
+        <div slot="time">Posted {{ itemInfo.time_ago }}</div>
+      </UserProfile>
+    </section>
+    <section>
       <h2> {{ itemInfo.title }}</h2>
     </section>
     <section>
@@ -25,10 +23,11 @@
 <script>
 
 import { mapActions, mapGetters } from "vuex";
+import UserProfile from "@/components/UserProfile";
 
 export default {
   name: "ItemView",
-
+  components: {UserProfile},
   computed: {
     ...mapGetters({ itemInfo: 'fetchedItemInfo' })
   },

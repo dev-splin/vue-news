@@ -3,14 +3,19 @@
     <div>
       <i class="fa-solid fa-user"></i>
     </div>
-<!--    <div class="user-description">-->
-<!--      <router-link :to="`/user/${itemInfo.id}`">-->
-<!--        {{ itemInfo.user }}-->
-<!--      </router-link>-->
-<!--      <div class="time">-->
-<!--        {{ itemInfo.time_ago }}-->
-<!--      </div>-->
-<!--    </div>-->
+    <div class="user-description">
+      <slot name="username">
+
+      </slot>
+      <div class="time">
+        <slot name="time">
+
+        </slot>
+        <slot name="karam">
+
+        </slot>
+      </div>
+    </div>
   </div>
 </template>
 

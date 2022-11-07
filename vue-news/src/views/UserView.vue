@@ -1,5 +1,9 @@
 <template>
-  <UserProfile></UserProfile>
+  <UserProfile>
+    <div slot="username">{{ userInfo. id }}</div>
+    <span slot="time">Joined {{ userInfo.created }}, </span>
+    <span slot="karam">{{ userInfo.karma }}</span>
+  </UserProfile>
 </template>
 
 <script>
