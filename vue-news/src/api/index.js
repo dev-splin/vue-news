@@ -36,9 +36,6 @@ function fetchItemInfo(itemId) {
 }
 
 export {
-    fetchNewsList,
-    fetchJobsList,
-    fetchAskList,
     fetchList,
     fetchUserInfo,
     fetchItemInfo
