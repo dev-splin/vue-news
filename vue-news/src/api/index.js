@@ -9,27 +9,12 @@ const config = {
 };
 
 /**
- * News 리스트 가져오기
+ * 리스트 데이터 가져오기
+ * @param pageName
  * @returns {Promise<AxiosResponse<any>>}
  */
-function fetchNewsList() {
-    return axios.get(`${config.baseUrl}/news/1.json`);
-}
-
-/**
- * Jobs 리스트 가져오기
- * @returns {Promise<AxiosResponse<any>>}
- */
-function fetchJobsList() {
-    return axios.get(`${config.baseUrl}/jobs/1.json`);
-}
-
-/**
- * Ask 리스트 가져오기
- * @returns {Promise<AxiosResponse<any>>}
- */
-function fetchAskList() {
-    return axios.get(`${config.baseUrl}/ask/1.json`);
+function fetchList(pageName) {
+    return axios.get(`${config.baseUrl}/${pageName}/1.json`);
 }
 
 /**
@@ -54,6 +39,7 @@ export {
     fetchNewsList,
     fetchJobsList,
     fetchAskList,
+    fetchList,
     fetchUserInfo,
     fetchItemInfo
 }

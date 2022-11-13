@@ -1,7 +1,5 @@
 export default {
-    newsItems: [],
-    jobsItems: [],
-    askItems: [],
+    list: [],
     userInfo: [],
     itemInfo: [],
 }
