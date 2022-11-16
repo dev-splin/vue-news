@@ -8,10 +8,11 @@ export default {
      * @returns {Promise<* | void>}
      * @constructor
      */
-    FETCH_LIST({ commit }, pageName) {
-        return api.fetchList(pageName)
-            .then(response => commit('SET_LIST', response.data))
-            .catch(error => console.log(error));
+    async FETCH_LIST({ commit }, pageName) {
+        const response = await api.fetchList(pageName);
+        commit('SET_LIST', response.data);
+
+        return response;
     },
     /**
      * user 데이터 api 호출
@@ -20,10 +21,11 @@ export default {
      * @returns {Promise<* | void>}
      * @constructor
      */
-    FETCH_USER_INFO({ commit }, userId) {
-        return api.fetchUserInfo(userId)
-            .then(response => commit('SET_USER_INFO', response.data))
-            .catch(error => console.log(error));
+    async FETCH_USER_INFO({ commit }, userId) {
+        const response = await api.fetchUserInfo(userId);
+        commit('SET_USER_INFO', response.data);
+
+        return response;
     },
     /**
      * item 데이터 api 호출
@@ -32,9 +34,10 @@ export default {
      * @returns {Promise<* | void>}
      * @constructor
      */
-    FETCH_ITEM_INFO({ commit }, itemId) {
-        return api.fetchItemInfo(itemId)
-            .then(response => commit('SET_ITEM_INFO', response.data))
-            .catch(error => console.log(error));
+    async FETCH_ITEM_INFO({ commit }, itemId) {
+        const response = await api.fetchItemInfo(itemId);
+        commit('SET_ITEM_INFO', response.data);
+
+        return response;
     }
 }
