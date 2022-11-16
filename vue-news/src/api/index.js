@@ -13,8 +13,12 @@ const config = {
  * @param pageName
  * @returns {Promise<AxiosResponse<any>>}
  */
-function fetchList(pageName) {
-    return axios.get(`${config.baseUrl}/${pageName}/1.json`);
+async function fetchList(pageName) {
+    try {
+        return await axios.get(`${config.baseUrl}/${pageName}/1.json`);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 /**
@@ -22,8 +26,12 @@ function fetchList(pageName) {
  * @param userId
  * @returns {Promise<AxiosResponse<any>>}
  */
-function fetchUserInfo(userId) {
-    return axios.get(`${config.baseUrl}/user/${userId}.json`);
+async function fetchUserInfo(userId) {
+    try {
+        return await axios.get(`${config.baseUrl}/user/${userId}.json`);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 /**
@@ -31,8 +39,12 @@ function fetchUserInfo(userId) {
  * @param itemId
  * @returns {Promise<AxiosResponse<any>>}
  */
-function fetchItemInfo(itemId) {
-    return axios.get(`${config.baseUrl}/item/${itemId}.json`);
+async function fetchItemInfo(itemId) {
+    try {
+        return await axios.get(`${config.baseUrl}/item/${itemId}.json`);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 export {
