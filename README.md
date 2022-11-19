@@ -22,3 +22,11 @@
 
 - **[해커 뉴스 공식 사이트 주소](https://news.ycombinator.com/)**
 - **[해커 뉴스 API 문서 주소](https://github.com/tastejs/hacker-news-pwas/blob/master/docs/api.md)**
+
+
+
+## :airplane: 배포
+
+간단한 배포는 Netlify를 사용합니다.
+
+- **[Netlify 공식 사이트](https://www.netlify.com/)**
