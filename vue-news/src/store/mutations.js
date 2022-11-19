@@ -1,12 +1,6 @@
 export default {
-    SET_NEWS(state, newsItems) {
-        state.newsItems = newsItems;
-    },
-    SET_JOBS(state, jobItems) {
-        state.jobsItems = jobItems;
-    },
-    SET_ASKS(state, askItems) {
-        state.askItems = askItems;
+    SET_LIST(state, list) {
+        state.list = list;
     },
     SET_USER_INFO(state, userInfo) {
         state.userInfo = userInfo;

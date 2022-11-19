@@ -2,55 +2,42 @@ import * as api from "@/api";
 
 export default {
     /**
-     * news 데이터 api 호출
+     * list 데이터 api 호출
      * @param commit
+     * @param pageName
+     * @returns {Promise<* | void>}
      * @constructor
      */
-    FETCH_NEWS({commit}) {
-        api.fetchNewsList()
-            .then(response => commit('SET_NEWS', response.data))
-            .catch(error => console.log(error));
-    },
-    /**
-     * jobs 데이터 api 호출
-     * @param commit
-     * @constructor
-     */
-    FETCH_JOBS({commit}) {
-        api.fetchJobsList()
-            .then(response => commit('SET_JOBS', response.data))
-            .catch(error => console.log(error));
-    },
-    /**
-     * asks 데이터 api 호출
-     * @param commit
-     * @constructor
-     */
-    FETCH_ASK({commit}) {
-        api.fetchAskList()
-            .then(response => commit('SET_ASKS', response.data))
-            .catch(error => console.log(error));
+    async FETCH_LIST({ commit }, pageName) {
+        const response = await api.fetchList(pageName);
+        commit('SET_LIST', response.data);
+
+        return response;
     },
     /**
      * user 데이터 api 호출
      * @param commit
      * @param userId
+     * @returns {Promise<* | void>}
      * @constructor
      */
-    FETCH_USER_INFO({ commit }, userId) {
-        api.fetchUserInfo(userId)
-            .then(response => commit('SET_USER_INFO', response.data))
-            .catch(error => console.log(error));
+    async FETCH_USER_INFO({ commit }, userId) {
+        const response = await api.fetchUserInfo(userId);
+        commit('SET_USER_INFO', response.data);
+
+        return response;
     },
     /**
      * item 데이터 api 호출
      * @param commit
      * @param itemId
+     * @returns {Promise<* | void>}
      * @constructor
      */
-    FETCH_ITEM_INFO({ commit }, itemId) {
-        api.fetchItemInfo(itemId)
-            .then(response => commit('SET_ITEM_INFO', response.data))
-            .catch(error => console.log(error));
+    async FETCH_ITEM_INFO({ commit }, itemId) {
+        const response = await api.fetchItemInfo(itemId);
+        commit('SET_ITEM_INFO', response.data);
+
+        return response;
     }
 }

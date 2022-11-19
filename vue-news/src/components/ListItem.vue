@@ -51,52 +51,11 @@
 export default {
   name: "ListItem",
 
-  data() {
-    return {
-      routeName: '',
-    }
-  },
-
   computed: {
     listItems() {
-      switch (this.routeName) {
-        case 'news':
-          return this.$store.getters.fetchedNewsItems;
-        case 'ask':
-          return this.$store.getters.fetchedAskItems;
-        case 'jobs':
-          return this.$store.getters.fetchedJobsItems;
-      }
+      return this.$store.getters.fetchedList;
     }
   },
-
-  created() {
-    this.routeName = this.$route.name;
-    this.dispatch();
-  },
-
-  methods: {
-    /**
-     * 데이터 가져오기
-     */
-    dispatch() {
-      let fetchName = 'FETCH_';
-      switch (this.routeName) {
-        case 'news':
-          fetchName += 'NEWS';
-          break;
-        case 'ask':
-          fetchName += 'ASK';
-          break;
-        case 'jobs':
-          fetchName += 'JOBS';
-          break;
-      }
-
-      this.$store.dispatch(fetchName);
-    },
-
-  }
 }
 </script>
 
